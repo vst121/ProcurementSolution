@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>aspire-ProcurementSolution.AppHost</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting" Version="9.0.0" />
+    <ProjectReference Include="..\Procurement.Notifications.Api\Procurement.Notifications.Api.csproj" />
+    <ProjectReference Include="..\Procurement.Orders.Api\Procurement.Orders.Api.csproj" />
+  </ItemGroup>
+
+</Project>

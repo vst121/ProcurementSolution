@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Procurement.Domain\Procurement.Domain.csproj" />
     <ProjectReference Include="..\Procurement.Events\Procurement.Events.csproj" />
+    <ProjectReference Include="..\ProcurementSolution.ServiceDefaults\ProcurementSolution.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>
