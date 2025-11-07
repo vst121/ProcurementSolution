@@ -1,18 +1,30 @@
 using Microsoft.Extensions.Logging;
 
-var builder = DistributedApplication.CreateBuilder(args);
-
-// Add logging
-var logger = LoggerFactory.Create(config =>
+try
 {
-    config.AddConsole();
-}).CreateLogger("ProcurementSolution.AppHost");
-logger.LogInformation("Starting ProcurementSolution.AppHost");
+    var builder = DistributedApplication.CreateBuilder(args);
 
-var notificationsApi = builder.AddProject("../Procurement.Notifications.Api/Procurement.Notifications.Api.csproj", "notifications-api");
-logger.LogInformation("Added notifications-api project");
+    // Add logging
+    var logger = LoggerFactory.Create(config =>
+    {
+        config.AddConsole();
+    }).CreateLogger("ProcurementSolution.AppHost");
+    logger.LogInformation("Starting ProcurementSolution.AppHost");
 
-var ordersApi = builder.AddProject("../Procurement.Orders.Api/Procurement.Orders.Api.csproj", "orders-api");
-logger.LogInformation("Added orders-api project");
+    var notificationsApi = builder.AddProject("notifications-api", "../Procurement.Notifications.Api/Procurement.Notifications.Api.csproj");
+    logger.LogInformation("Added notifications-api project");
 
-builder.Build().Run();
+    var ordersApi = builder.AddProject("orders-api", "../Procurement.Orders.Api/Procurement.Orders.Api.csproj");
+    logger.LogInformation("Added orders-api project");
+
+    builder.Build().Run();
+}
+catch (Exception ex)
+{
+    var logger = LoggerFactory.Create(config =>
+    {
+        config.AddConsole();
+    }).CreateLogger("ProcurementSolution.AppHost");
+    logger.LogError(ex, "An error occurred while starting the application");
+    throw;
+}
