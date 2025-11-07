@@ -26,5 +26,7 @@ catch (Exception ex)
         config.AddConsole();
     }).CreateLogger("ProcurementSolution.AppHost");
     logger.LogError(ex, "An error occurred while starting the application");
+    logger.LogError($"Exception type: {ex.GetType().FullName}");
+    logger.LogError($"Inner exception: {ex.InnerException?.Message ?? "None"}");
     throw;
 }

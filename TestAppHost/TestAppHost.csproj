@@ -7,14 +7,11 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>aspire-ProcurementSolution.AppHost</UserSecretsId>
+    <UserSecretsId>459b36a1-631a-4e39-9a06-879ff148e4b4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.2" />
-    <PackageReference Include="Aspire.Hosting" Version="9.5.2" />
-    <ProjectReference Include="..\Procurement.Notifications.Api\Procurement.Notifications.Api.csproj" />
-    <ProjectReference Include="..\Procurement.Orders.Api\Procurement.Orders.Api.csproj" />
   </ItemGroup>
 
 </Project>
