@@ -36,9 +36,9 @@ This separation helps isolate concerns, simplifies testing and maintenance, and 
 
 ### Prerequisites
 
-- .NET SDK (version X.Y or later)  
+- .NET SDK (version 10)  
 - A supported runtime (Windows / Linux / macOS)  
-- (Optional) API client / HTTP tool such as Postman or curl for testing the APIs.
+- API client / HTTP tool such as Postman or curl for testing the APIs.
 
 ### Setup
 
